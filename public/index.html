@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visionary Scribe - Image to Prompt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-image"></div>
+    
+    <div class="container">
+        <h1>Visionary Scribe 🖼</h1>
+        <p>Turn your images into detailed, high-quality prompts.</p>
+
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="imageInput" accept="image/*" hidden>
+            <p>Drag & Drop Image Here or <span class="upload-link" onclick="document.getElementById('imageInput').click()"> Click to Upload</span></p>
+            <img id="previewImage" src="#" alt="Image Preview" class="hidden">
+        </div>
+        <p id="fileNameDisplay" class="hidden"></p>
+
+        <div class="controls">
+            <select id="promptStyle">
+                <option value="detailed">Detailed Prompt (Defalut)</option>
+                <option value="stylized">Stylized fot Midjourney/SD</option>
+                <option value="simple">Simple Description</option>
+            </select>
+            <button id="generateButton" disabled>GENERATE PROMPT</button>
+        </div>
+
+        <div class="output-container">
+            <h2>Generated Prompt:</h2>
+            <textarea id="promptOutput" placeholder="Your generated prompt will appear here.." readonly></textarea>
+            <button id="copyButton" class="hidden" onclick="copyPrompt()">Copy Prompt</button>
+        </div>
+
+        <div id="loadingIndicator" class="hidden">Generating... please wait.</div>
+        <div id="errorMessage" class="error-message hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+body {
+    font-family: sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow-y: auto;
+    justify-content: center;
+}
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.7) blur(2px);
+    z-index: -1;
+}
+.container {
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    margin: 40px auto;
+}
+h1 {
+    color: #3f7bbf;
+    text-align: center;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #555;
+}
+.upload-area {
+    border: 3px dashed rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.upload-area:hover {
+    border-color: #4a90e2;
+}
+.upload-link {
+    color: #4a90e2;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#previewImage {
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+select, button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+select {
+    border: 1px solid #ccc;
+    flex-grow: 1;
+    margin-right: 15px;
+}
+#generateButton {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#generateButton:disabled {
+    background-color: #aabbeb;
+    cursor: not-allowed;
+}
+#generateButton:hover:not(:disabled) {
+    background-color: #357abd;
+}
+.output-container {
+    margin-top: 30px;
+}
+#promptOutput {
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    font-size: 14px;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+#copyButton {
+    float: right;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#copyButton:hover{
+    background-color: #1e7e34;
+}
+.hidden {
+    display: none !important;
+}
+#loadingIndicator {
+    text-align: center;
+    font-style: italic;
+    color: #999;
+    margin-top: 15px;
+}
+.error-message {
+    text-align: center;
+    color: #dc3545;
+    margin-top: 15px;
+    font-weight: bold;
+}
+#fileNameDisplay {
+    text-align: center;
+    margin: 5px 0 15px 0;
+    font-size: 14px;
+    color: #444;
+}
